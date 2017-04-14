@@ -1330,6 +1330,70 @@ class MusicBot(discord.Client):
         if self.config.auto_playlist:
             await self.on_player_finished_playing(player)
 
+            
+            
+            
+            
+    async def cmd_rating(self,channel,message):
+        import pandas as pd
+        idWooph = '124562283358715904'
+        idDavid = '180748611556999168'
+        idAdi = '175578898585616384'
+        idRola = '174952788537638912'
+        idNihtmer = '252518039151575040'
+        idLoopie = '195878798091091968'
+        idDusky = '195879263885328384'
+        idAXH = '185378556296167424'
+        
+        players = ['Wooph', 'David', 'Adi', 'Rola', 'Nihtmer', 'Loopie', 'Dusky', 'AXH']
+        ratingindex = []
+        df = pd.read_csv("https://docs.google.com/spreadsheets/d/1mcjdHxQ01XrIa8WT_l0PnndwX45S-6qyN7VZ65gUK70/pub?gid=0&single=true&output=csv")
+
+        for i in range(0, 8):
+            ratingindex.append((df["Rating Index"][i]))
+
+        newdf = pd.DataFrame({
+            'Name': players,
+            'Score': ratingindex})
+
+        newdf = newdf.reset_index(drop=True)
+        if message.author.id==idWooph:
+            em = discord.Embed(title='', description=str(ratingindex[0]), colour=0x109856)
+            em.set_author(name='Wooph', icon_url=message.author.avatar_url)
+            em.set_footer(text='Alive eSports RO Rating System')
+        elif message.author.id==idDavid:
+            em = discord.Embed(title='', description=str(ratingindex[1]), colour=0xFF8901)
+            em.set_author(name='David', icon_url=message.author.avatar_url)
+            em.set_footer(text='Alive eSports RO Rating System')
+        elif message.author.id==idAdi:
+            em = discord.Embed(title='', description=str(ratingindex[2]), colour=0xFFFC01)
+            em.set_author(name='Adi', icon_url=message.author.avatar_url)
+            em.set_footer(text='Alive eSports RO Rating System')
+        elif message.author.id==idRola:
+            em = discord.Embed(title='', description=str(ratingindex[3]), colour=0xCC3333)
+            em.set_author(name='Rola', icon_url=message.author.avatar_url)
+            em.set_footer(text='Alive eSports RO Rating System')
+        elif message.author.id==idNihtmer:
+            em = discord.Embed(title='', description=str(ratingindex[4]), colour=0x68A3E5)
+            em.set_author(name='Nihtmer', icon_url=message.author.avatar_url)
+            em.set_footer(text='Alive eSports RO Rating System')
+        elif message.author.id==idLoopie:
+            em = discord.Embed(title='', description=str(ratingindex[5]), colour=0x803CA1)
+            em.set_author(name='Loopie', icon_url=message.author.avatar_url)
+            em.set_footer(text='Alive eSports RO Rating System')
+        elif message.author.id==idDusky:
+            em = discord.Embed(title='', description=str(ratingindex[6]), colour=0xCC66CC)
+            em.set_author(name='Dusky', icon_url=message.author.avatar_url)
+            em.set_footer(text='Alive eSports RO Rating System')
+        elif message.author.id==idAXH:
+            em = discord.Embed(title='', description=str(ratingindex[7]), colour=0x999999)
+            em.set_author(name='AXH', icon_url=message.author.avatar_url)
+            em.set_footer(text='Alive eSports RO Rating System')
+        else:
+            await self.send_message(channel, "Unknown player.")
+        await self.send_message(channel, embed=em)
+        #return Response(tabulate(newdf, headers='keys', tablefmt='simple'))
+        
     async def cmd_pause(self, player):
         """
         Usage:
