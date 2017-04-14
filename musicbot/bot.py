@@ -1393,6 +1393,33 @@ class MusicBot(discord.Client):
             await self.send_message(channel, "Unknown player.")
         await self.send_message(channel, embed=em)
         #return Response(tabulate(newdf, headers='keys', tablefmt='simple'))
+    
+    async def cmd_leaderboard(self,channel,message):
+        import pandas as pd
+        players = ['Wooph', 'David', 'Adi', 'Rola', 'Nihtmer', 'Loopie', 'Dusky', 'AXH']
+        ratingindex = []
+        df = pd.read_csv("https://docs.google.com/spreadsheets/d/1mcjdHxQ01XrIa8WT_l0PnndwX45S-6qyN7VZ65gUK70/pub?gid=0&single=true&output=csv")
+
+        for i in range(0, 8):
+            ratingindex.append((df["Rating Index"][i]))
+
+        newdf = pd.DataFrame({
+            'Name': players,
+            'Score': ratingindex})
+        em = discord.Embed(title=' ', description='Leaderboard', colour=0x999999)
+        #em.set_author(name='')
+
+        newdf = newdf.reindex_axis(['Name', 'Score'], axis=1)
+
+        newdf = newdf.sort_values(['Score', 'Name'], ascending=[0, 1])
+
+        newdf = newdf.reset_index(drop=True)
+
+        for i in range(0, 8):
+            em.add_field(name=newdf['Name'][i], value=newdf['Score'][i], inline=False)
+        
+        await self.send_message(channel, embed=em)
+        #return Response(tabulate(newdf, headers='keys', tablefmt='simple'))
         
     async def cmd_pause(self, player):
         """
