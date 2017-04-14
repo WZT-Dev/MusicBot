@@ -1330,10 +1330,10 @@ class MusicBot(discord.Client):
         if self.config.auto_playlist:
             await self.on_player_finished_playing(player)
 
-            
-            
-            
-            
+
+
+
+
     async def cmd_rating(self,channel,message):
         import pandas as pd
         idWooph = '124562283358715904'
@@ -1392,8 +1392,7 @@ class MusicBot(discord.Client):
         else:
             await self.send_message(channel, "Unknown player.")
         await self.send_message(channel, embed=em)
-        #return Response(tabulate(newdf, headers='keys', tablefmt='simple'))
-    
+
     async def cmd_leaderboard(self,channel,message):
         import pandas as pd
         players = ['Wooph', 'David', 'Adi', 'Rola', 'Nihtmer', 'Loopie', 'Dusky', 'AXH']
@@ -1407,7 +1406,6 @@ class MusicBot(discord.Client):
             'Name': players,
             'Score': ratingindex})
         em = discord.Embed(title=' ', description='Leaderboard', colour=0x999999)
-        #em.set_author(name='')
 
         newdf = newdf.reindex_axis(['Name', 'Score'], axis=1)
 
@@ -1419,8 +1417,7 @@ class MusicBot(discord.Client):
             em.add_field(name=newdf['Name'][i], value=newdf['Score'][i], inline=False)
         
         await self.send_message(channel, embed=em)
-        #return Response(tabulate(newdf, headers='keys', tablefmt='simple'))
-        
+
     async def cmd_pause(self, player):
         """
         Usage:
