@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{893f1c63-9a7e-4b50-a440-432c1a770d93}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>run.py</StartupFile>
+    <SearchPath>musicbot\;config\;musicbot\lib</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="config\autoplaylist.txt" />
+    <Content Include="config\blacklist.txt" />
+    <Content Include="config\example_options.ini" />
+    <Content Include="config\example_permissions.ini" />
+    <Content Include="config\whitelist.txt" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="musicbot\bot.py" />
+    <Compile Include="musicbot\config.py" />
+    <Compile Include="musicbot\constants.py" />
+    <Compile Include="musicbot\downloader.py" />
+    <Compile Include="musicbot\entry.py" />
+    <Compile Include="musicbot\exceptions.py" />
+    <Compile Include="musicbot\lib\event_emitter.py" />
+    <Compile Include="musicbot\lib\__init__.py" />
+    <Compile Include="musicbot\opus_loader.py" />
+    <Compile Include="musicbot\permissions.py" />
+    <Compile Include="musicbot\player.py" />
+    <Compile Include="musicbot\playlist.py" />
+    <Compile Include="musicbot\utils.py" />
+    <Compile Include="musicbot\__init__.py" />
+    <Compile Include="run.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="config" />
+    <Folder Include="musicbot" />
+    <Folder Include="musicbot\lib" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
