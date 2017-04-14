@@ -1,28 +1,15 @@
-# RhinoBot: The music bot for Discord.
+# WZTBot: The [MusicBot](https://github.com/Just-Some-Bots/MusicBot) for Discord with some proprietary features for our server.
+
+### MusicBot
 
 MusicBot is a Discord music bot written in [Python](https://www.python.org "Python homepage"). It plays requested songs and if the queue becomes empty it will play through a list of existing songs.
 
-### How do I set it up?
+All credits goes to the original developers for the [bot](https://github.com/Just-Some-Bots/MusicBot) for wrinting all the code that we didn't.
 
-[CLICK HERE](https://github.com/SexualRhinoceros/MusicBot/wiki) to find the guide that suites your operating system.
+### Our Modifications
 
-### Commands
+We modified the bot to add some features for our Discord Server. This features are related to the our CS:GO players' scorings, for now; there may be more to come.
 
-Commands are listed [here](https://github.com/SexualRhinoceros/MusicBot/wiki/Commands "Commands list").
+### Our Community
 
-### Configuration
-
-The main configuration file is `config/options.ini`, but is not included.  Simply make a copy of `example_options.ini` and rename to `options.ini`.  See `example_options.ini` for more information on how to configure it.
-
-[CLICK HERE](https://github.com/SexualRhinoceros/MusicBot/wiki/Configuration) for more details.
-
-### Great, now how do I use it?
-Download the bot, set the dependencies up, then run `runbot.bat`! (or `run.sh` on mac/linux)  Read the tutorial if you don't know what to do.
-
-If you have any errors, read the FAQ. If that didn't help, you can ask for assistance on the discord help server. Is is recommended to take screenshots so the developers can see errors.
-
-[Rhino Help Server](http://discord.me/rhinohelp "Discord link")
-
-### FAQ
-
-Some frequently asked questions are listed on the wiki [here](https://github.com/SexualRhinoceros/MusicBot/wiki/FAQ "Wiki").
+We are a small Romanian community. You can find more about us on our [website](https://www.wzt.ro), or you can join our [Discord server](https://discord.gg/RW4UavD "Join Discord"), where you will find this modded bot.
