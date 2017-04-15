@@ -4,6 +4,7 @@
 
 audio_cache/
 dectalk/
+.vs/
 
 discord.log
 config/options.ini
